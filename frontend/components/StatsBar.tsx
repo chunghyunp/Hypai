@@ -26,8 +26,8 @@ function StatItem({ stat }: { stat: typeof translations.stats[number] }) {
   }, [inView, motionValue, stat.target]);
 
   return (
-    <div className="text-center px-6 py-8">
-      <div className="text-4xl md:text-5xl font-black text-white mb-2">
+    <div className="text-center px-3 py-6 md:px-6 md:py-8">
+      <div className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2">
         {stat.prefix && <span>{stat.prefix}</span>}
         <span ref={ref}>0</span>
         <span>{stat.suffix}</span>

@@ -46,7 +46,7 @@ export default function TabB() {
     <PageTransition>
       {/* Hero */}
       <ParallaxSection className="min-h-[60vh] flex items-center bg-gradient-to-br from-gray-950 via-brand-950/60 to-gray-950">
-        <div className="max-w-7xl mx-auto px-6 py-28 w-full">
+        <div className="max-w-7xl mx-auto px-6 py-16 md:py-28 w-full">
           <ScrollReveal>
             <RevealItem>
               <span className="inline-block text-brand-400 font-semibold tracking-widest uppercase text-sm mb-4">
@@ -54,7 +54,7 @@ export default function TabB() {
               </span>
             </RevealItem>
             <RevealItem>
-              <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 leading-tight">
                 {tr(T.heroLine1, lang)}<br />
                 <span className="text-brand-400">{tr(T.heroLine2, lang)}</span>
               </h1>
@@ -69,17 +69,17 @@ export default function TabB() {
       </ParallaxSection>
 
       {/* Operational Pillars */}
-      <section className="max-w-7xl mx-auto px-6 py-28">
+      <section className="max-w-7xl mx-auto px-6 py-14 md:py-28">
         <ScrollReveal>
           <RevealItem>
-            <h2 className="text-4xl font-bold text-white mb-16 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 md:mb-16 text-center">
               {tr(T.howWeOperate, lang)}
             </h2>
           </RevealItem>
           <div className="grid md:grid-cols-2 gap-8">
             {T.pillars.map((p) => (
               <RevealItem key={p.title.en}>
-                <div className="border border-gray-800 rounded-2xl p-8 hover:border-brand-700/60 transition-colors duration-300 bg-gray-900/40">
+                <div className="border border-gray-800 rounded-2xl p-5 md:p-8 hover:border-brand-700/60 transition-colors duration-300 bg-gray-900/40">
                   <h3 className="text-2xl font-bold text-white mb-3">{tr(p.title, lang)}</h3>
                   <p className="text-gray-400 leading-relaxed">{tr(p.body, lang)}</p>
                 </div>
@@ -113,11 +113,11 @@ export default function TabB() {
       </section>
 
       {/* Global Branches */}
-      <section className="max-w-7xl mx-auto px-6 py-28">
+      <section className="max-w-7xl mx-auto px-6 py-14 md:py-28">
         <ScrollReveal>
           <RevealItem>
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 {tr(T.branchesHeading, lang)}
               </h2>
               <p className="text-gray-400 text-lg">{tr(T.branchesSub, lang)}</p>
@@ -140,14 +140,14 @@ export default function TabB() {
 
       {/* Partner Companies */}
       <section className="bg-gray-900/40 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-6 py-28">
+        <div className="max-w-7xl mx-auto px-6 py-14 md:py-28">
           <ScrollReveal>
             <RevealItem>
-              <div className="text-center mb-16">
+              <div className="text-center mb-10 md:mb-16">
                 <span className="inline-block text-brand-400 font-semibold tracking-widest uppercase text-sm mb-4">
                   {tr(T.partnerBadge, lang)}
                 </span>
-                <h2 className="text-4xl font-bold text-white mb-4">{tr(T.partnerHeading, lang)}</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{tr(T.partnerHeading, lang)}</h2>
                 <p className="text-gray-400 text-lg max-w-2xl mx-auto">{tr(T.partnerSub, lang)}</p>
               </div>
             </RevealItem>

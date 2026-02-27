@@ -63,7 +63,7 @@ export default function HeroSection({
       {/* Content */}
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-20 w-full"
+        className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-12 md:pb-20 w-full"
       >
         <motion.div
           variants={heroHeadingVariants}
@@ -71,7 +71,7 @@ export default function HeroSection({
           animate="animate"
           className="overflow-hidden"
         >
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-none tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white leading-none tracking-tight mb-6">
             {headline.split(' ').map((word, i) => (
               <span
                 key={i}
@@ -87,7 +87,7 @@ export default function HeroSection({
           variants={heroSubVariants}
           initial="initial"
           animate="animate"
-          className="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed mb-10"
+          className="text-base md:text-xl lg:text-2xl text-gray-400 max-w-2xl leading-relaxed mb-8 md:mb-10"
         >
           {subheadline}
         </motion.p>
@@ -100,13 +100,13 @@ export default function HeroSection({
         >
           <Link
             href={ctaHref}
-            className="inline-block bg-brand-500 hover:bg-brand-400 text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-200"
+            className="inline-block bg-brand-500 hover:bg-brand-400 text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full text-base md:text-lg transition-colors duration-200"
           >
             {ctaLabel} →
           </Link>
           <Link
             href="/business"
-            className="inline-block border border-gray-700 hover:border-brand-500 text-gray-300 hover:text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-200"
+            className="inline-block border border-gray-700 hover:border-brand-500 text-gray-300 hover:text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full text-base md:text-lg transition-colors duration-200"
           >
             See our work
           </Link>

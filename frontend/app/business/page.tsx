@@ -13,7 +13,7 @@ export default function TabC() {
   return (
     <PageTransition>
       {/* Header */}
-      <section className="max-w-7xl mx-auto px-6 pt-32 pb-16">
+      <section className="max-w-7xl mx-auto px-6 pt-24 md:pt-32 pb-10 md:pb-16">
         <ScrollReveal>
           <RevealItem>
             <span className="inline-block text-brand-400 font-semibold tracking-widest uppercase text-sm mb-4">
@@ -21,7 +21,7 @@ export default function TabC() {
             </span>
           </RevealItem>
           <RevealItem>
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 leading-tight">
               {tr(T.heading1, lang)}<br />
               <span className="text-brand-400">{tr(T.heading2, lang)}</span>
             </h1>
@@ -35,7 +35,7 @@ export default function TabC() {
       </section>
 
       {/* Business highlights grid */}
-      <section className="max-w-7xl mx-auto px-6 pb-28">
+      <section className="max-w-7xl mx-auto px-6 pb-16 md:pb-28">
         <ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {T.projects.map((p) => (

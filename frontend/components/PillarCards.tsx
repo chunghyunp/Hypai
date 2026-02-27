@@ -21,7 +21,7 @@ export default function PillarCards() {
           key={f.title.en}
           custom={i % 2 === 0 ? -1 : 1}
           variants={pillarCardVariants}
-          className="border border-gray-800 rounded-2xl p-8 hover:border-brand-700/60 transition-colors duration-300 bg-gray-900/40"
+          className="border border-gray-800 rounded-2xl p-5 md:p-8 hover:border-brand-700/60 transition-colors duration-300 bg-gray-900/40"
         >
           <div className="text-4xl mb-4">{f.icon}</div>
           <h3 className="text-xl font-semibold text-white mb-2">{tr(f.title, lang)}</h3>

@@ -13,7 +13,7 @@ export default function TabD() {
     <PageTransition>
       <section className="min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-6 py-28 w-full">
-          <div className="grid lg:grid-cols-2 gap-20 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left — copy */}
             <ScrollReveal>
               <RevealItem>
@@ -22,7 +22,7 @@ export default function TabD() {
                 </span>
               </RevealItem>
               <RevealItem>
-                <h1 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
                   {tr(T.heading1, lang)}<br />
                   <span className="text-brand-400">{tr(T.heading2, lang)}</span>
                 </h1>
@@ -55,7 +55,7 @@ export default function TabD() {
             {/* Right — form */}
             <ScrollReveal>
               <RevealItem>
-                <div className="bg-gray-900/60 border border-gray-800 rounded-3xl p-8 md:p-10">
+                <div className="bg-gray-900/60 border border-gray-800 rounded-3xl p-6 md:p-10">
                   <h2 className="text-2xl font-bold text-white mb-8">{tr(T.formTitle, lang)}</h2>
                   <form className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-6">

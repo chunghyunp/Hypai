@@ -52,11 +52,11 @@ export default function TabA() {
 
       <StatsBar />
 
-      <section className="max-w-7xl mx-auto px-6 py-24">
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-24">
         <ScrollReveal>
           <RevealItem>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <div className="text-center mb-10 md:mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 {tr(T.sectionHeading1, lang)}{' '}
                 <span className="text-brand-400">{tr(T.sectionHeading2, lang)}</span>
               </h2>
@@ -90,19 +90,19 @@ export default function TabA() {
           backgroundSize: '28px 28px',
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-28">
+        <div className="max-w-7xl mx-auto px-6 py-16 md:py-28">
           <ScrollReveal>
             <RevealItem>
               <div className="text-center">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
                   {tr(T.ctaHeading, lang)}
                 </h2>
-                <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
+                <p className="text-gray-400 text-base md:text-lg mb-8 md:mb-10 max-w-xl mx-auto">
                   {tr(T.ctaSub, lang)}
                 </p>
                 <a
                   href="/contact"
-                  className="inline-block bg-brand-500 hover:bg-brand-400 text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors duration-200"
+                  className="inline-block bg-brand-500 hover:bg-brand-400 text-white font-semibold px-8 py-3 md:px-10 md:py-4 rounded-full text-base md:text-lg transition-colors duration-200"
                 >
                   {tr(T.ctaButton, lang)}
                 </a>
