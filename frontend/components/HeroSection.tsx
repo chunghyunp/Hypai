@@ -105,7 +105,7 @@ export default function HeroSection({
             {ctaLabel} →
           </Link>
           <Link
-            href="/tab-c"
+            href="/business"
             className="inline-block border border-gray-700 hover:border-brand-500 text-gray-300 hover:text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors duration-200"
           >
             See our work

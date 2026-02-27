@@ -47,7 +47,7 @@ export default function TabA() {
         headline={tr(T.heroHeadline, lang)}
         subheadline={tr(T.heroSub, lang)}
         ctaLabel={tr(T.heroCTA, lang)}
-        ctaHref="/tab-c"
+        ctaHref="/business"
       />
 
       <StatsBar />
@@ -101,7 +101,7 @@ export default function TabA() {
                   {tr(T.ctaSub, lang)}
                 </p>
                 <a
-                  href="/tab-d"
+                  href="/contact"
                   className="inline-block bg-brand-500 hover:bg-brand-400 text-white font-semibold px-10 py-4 rounded-full text-lg transition-colors duration-200"
                 >
                   {tr(T.ctaButton, lang)}

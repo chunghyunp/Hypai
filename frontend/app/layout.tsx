@@ -24,12 +24,12 @@ export default async function RootLayout({
     console.error('Could not load navigation from backend:', err);
     // Fallback tabs so the site stays usable
     tabs = [
-      { id: 'tab-a', label: 'Home',       href: '/tab-a' },
-      { id: 'tab-b', label: 'About',      href: '/tab-b' },
-      { id: 'tab-c', label: 'Business',   href: '/tab-c' },
-      { id: 'tab-e', label: 'Updates',    href: '/tab-e' },
-      { id: 'tab-f', label: 'Investment', href: '/tab-f' },
-      { id: 'tab-d', label: 'Contact',    href: '/tab-d' },
+      { id: 'home',       label: 'Home',       href: '/home' },
+      { id: 'about',      label: 'About',      href: '/about' },
+      { id: 'business',   label: 'Business',   href: '/business' },
+      { id: 'updates',    label: 'Updates',    href: '/updates' },
+      { id: 'investment', label: 'Investment', href: '/investment' },
+      { id: 'contact',    label: 'Contact',    href: '/contact' },
     ];
   }
 

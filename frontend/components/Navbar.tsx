@@ -26,7 +26,7 @@ export default function Navbar({ tabs }: NavbarProps) {
     >
       {/* Logo */}
       <motion.a
-        href="/tab-a"
+        href="/home"
         className="font-black text-xl tracking-tight text-white"
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.97 }}
@@ -50,7 +50,7 @@ export default function Navbar({ tabs }: NavbarProps) {
       <div className="flex items-center gap-2">
         <LangToggle />
         <motion.a
-          href="/tab-d"
+          href="/contact"
           className="hidden lg:inline-block bg-brand-500 hover:bg-brand-400 text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors duration-200"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.96 }}
