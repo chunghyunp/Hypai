@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { navbarVariants } from '@/lib/motionVariants';
 import NavLink from './NavLink';
+import LangToggle from './LangToggle';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations, tr } from '@/lib/translations';
 import type { NavTab } from '@/types/navigation';
 
 interface NavbarProps {
@@ -12,6 +15,7 @@ interface NavbarProps {
 
 export default function Navbar({ tabs }: NavbarProps) {
   const pathname = usePathname();
+  const { lang } = useLanguage();
 
   return (
     <motion.nav
@@ -28,7 +32,7 @@ export default function Navbar({ tabs }: NavbarProps) {
         whileTap={{ scale: 0.97 }}
         transition={{ type: 'spring', stiffness: 400, damping: 20 }}
       >
-        HYP<span className="text-brand-400">AI</span>
+        Hypai <span className="text-brand-400">Labs</span>
       </motion.a>
 
       {/* Nav links */}
@@ -42,16 +46,19 @@ export default function Navbar({ tabs }: NavbarProps) {
         ))}
       </div>
 
-      {/* CTA */}
-      <motion.a
-        href="/tab-d"
-        className="hidden md:inline-block bg-brand-500 hover:bg-brand-400 text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors duration-200"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.96 }}
-        transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-      >
-        Get in touch
-      </motion.a>
+      {/* Language toggle + CTA */}
+      <div className="flex items-center gap-2">
+        <LangToggle />
+        <motion.a
+          href="/tab-d"
+          className="hidden lg:inline-block bg-brand-500 hover:bg-brand-400 text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors duration-200"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.96 }}
+          transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+        >
+          {tr(translations.nav.cta, lang)}
+        </motion.a>
+      </div>
     </motion.nav>
   );
 }

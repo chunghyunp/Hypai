@@ -121,3 +121,13 @@ export const orbVariantsSlow: Variants = {
     },
   },
 };
+
+// Pillar card directional slide-in — custom: -1 (from left) or 1 (from right)
+export const pillarCardVariants: Variants = {
+  hidden: (dir: number) => ({ opacity: 0, x: dir * 60 }),
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
+};
