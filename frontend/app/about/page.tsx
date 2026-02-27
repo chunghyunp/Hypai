@@ -76,7 +76,7 @@ export default function TabB() {
               {tr(T.howWeOperate, lang)}
             </h2>
           </RevealItem>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-8">
             {T.pillars.map((p) => (
               <RevealItem key={p.title.en}>
                 <div className="border border-gray-800 rounded-2xl p-5 md:p-8 hover:border-brand-700/60 transition-colors duration-300 bg-gray-900/40">
@@ -151,7 +151,7 @@ export default function TabB() {
                 <p className="text-gray-400 text-lg max-w-2xl mx-auto">{tr(T.partnerSub, lang)}</p>
               </div>
             </RevealItem>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {partners.map((p) => {
                 const badgeCls = sectorColors(p.sector);
                 const areaLabel = tr(T.partnerAreas[p.area], lang);

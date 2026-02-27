@@ -115,7 +115,7 @@ export default function HeroSection({
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 text-xs"
+        className="absolute bottom-10 left-0 right-0 flex flex-col items-center gap-2 text-gray-600 text-xs"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       >

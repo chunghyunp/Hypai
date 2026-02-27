@@ -37,7 +37,7 @@ export default function TabC() {
       {/* Business highlights grid */}
       <section className="max-w-7xl mx-auto px-6 pb-16 md:pb-28">
         <ScrollReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {T.projects.map((p) => (
               <RevealItem key={p.title}>
                 <HoverCard className={`bg-gradient-to-br ${p.color} border ${p.border} h-full`}>
