@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { navbarVariants } from '@/lib/motionVariants';
@@ -30,12 +31,19 @@ export default function Navbar({ tabs }: NavbarProps) {
         {/* Logo */}
         <motion.a
           href="/home"
-          className="font-black text-xl tracking-tight text-white shrink-0"
+          className="shrink-0"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
           transition={{ type: 'spring', stiffness: 400, damping: 20 }}
         >
-          Hypai <span className="text-brand-400">Labs</span>
+          <Image
+            src="/hypailogo.png"
+            alt="Hypai Labs"
+            width={96}
+            height={40}
+            className="h-8 w-auto object-contain"
+            priority
+          />
         </motion.a>
 
         {/* Desktop nav links */}

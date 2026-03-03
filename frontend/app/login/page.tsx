@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 
@@ -42,10 +43,15 @@ function LoginForm() {
     <div className="min-h-screen bg-gray-950 flex items-center justify-center px-6">
       <div className="w-full max-w-sm">
         {/* Logo */}
-        <div className="text-center mb-10">
-          <span className="font-black text-2xl tracking-tight text-white">
-            Hypai <span className="text-brand-400">Labs</span>
-          </span>
+        <div className="flex flex-col items-center mb-10">
+          <Image
+            src="/hypailogo.png"
+            alt="Hypai Labs"
+            width={120}
+            height={48}
+            className="h-10 w-auto object-contain mb-2"
+            priority
+          />
           <p className="text-gray-500 text-sm mt-2">Internal Preview</p>
         </div>
 
