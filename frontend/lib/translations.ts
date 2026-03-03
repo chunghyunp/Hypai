@@ -94,6 +94,14 @@ export const translations = {
     },
   ],
 
+  // ── Company Introduction Download ────────────────────────
+  companyIntro: {
+    heading:   t('Company Introduction', '회사 소개서'),
+    sub:       t('Download our official company introduction for a full overview of Hypai Labs.', '공식 회사 소개서를 다운로드하여 Hypai Labs의 전체적인 개요를 확인하세요.'),
+    btnEN:     t('Download (English)', '다운로드 (영문)'),
+    btnKR:     t('Download (한국어)', '다운로드 (한국어)'),
+  },
+
   // ── About (tab-b) ────────────────────────────────────────
   about: {
     badge:       t('Company Overview', '회사 개요'),

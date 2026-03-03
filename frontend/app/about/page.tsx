@@ -68,6 +68,44 @@ export default function TabB() {
         </div>
       </ParallaxSection>
 
+      {/* Company Introduction Download */}
+      <section className="border-t border-gray-800 bg-gray-900/30">
+        <div className="max-w-7xl mx-auto px-6 py-10 md:py-14">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <h2 className="text-xl font-bold text-white mb-1">
+                {tr(translations.companyIntro.heading, lang)}
+              </h2>
+              <p className="text-gray-400 text-sm max-w-md">
+                {tr(translations.companyIntro.sub, lang)}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <a
+                href="/docs/HYPAI_CI_EN.pdf"
+                download
+                className="flex items-center gap-2 bg-brand-500 hover:bg-brand-400 text-white text-sm font-semibold px-5 py-3 rounded-xl transition-colors duration-200"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M8 1v9M4.5 6.5 8 10l3.5-3.5M2 13h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                {tr(translations.companyIntro.btnEN, lang)}
+              </a>
+              <a
+                href="/docs/HYPAI_CI_KR.pdf"
+                download
+                className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-gray-600 text-white text-sm font-semibold px-5 py-3 rounded-xl transition-colors duration-200"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M8 1v9M4.5 6.5 8 10l3.5-3.5M2 13h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                {tr(translations.companyIntro.btnKR, lang)}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Operational Pillars */}
       <section className="max-w-7xl mx-auto px-6 py-14 md:py-28">
         <ScrollReveal>
