@@ -36,7 +36,7 @@ export const translations = {
 
   // ── Stats Bar ────────────────────────────────────────────
   stats: [
-    { prefix: 'KRW ', target: 10, suffix: 'T+', label: t('Investment Secured', '투자 유치 규모') },
+    { prefix: 'USD ', target: 10, suffix: 'T+', label: t('Investment Secured', '투자 유치 규모') },
     { prefix: '',     target: 14, suffix: '+',  label: t('Global Branches',    '해외 지점') },
     { prefix: 'USD ', target: 100, suffix: 'M+', label: t('Annual Exports',   '연간 수출액') },
     { prefix: '',     target: 50, suffix: '+',  label: t('Portfolio Transactions', '포트폴리오 거래') },
@@ -72,7 +72,7 @@ export const translations = {
       icon: '💼',
       title: t('Investment Portfolio', '투자 포트폴리오'),
       body: t(
-        'Over KRW 10 trillion in investment secured across 50+ transactions spanning entertainment, real estate, healthcare, and manufacturing.',
+        'Over USD 10 trillion in investment secured across 50+ transactions spanning entertainment, real estate, healthcare, and manufacturing.',
         '엔터테인먼트, 부동산, 의료, 제조 등 50건 이상의 거래에 걸쳐 KRW 10조 이상의 투자를 유치했습니다.',
       ),
     },
@@ -137,7 +137,7 @@ export const translations = {
       {
         title: t('Investment & Growth', '투자 및 성장'),
         body:  t(
-          'With over KRW 10 trillion in secured investment and 50+ transactions, we actively create cross-industry synergies across our portfolio.',
+          'With over USD 10 trillion in secured investment and 50+ transactions, we actively create cross-industry synergies across our portfolio.',
           'KRW 10조 이상의 투자 유치와 50건 이상의 거래를 바탕으로, 포트폴리오 전반에 걸쳐 산업 간 시너지를 창출합니다.',
         ),
       },
