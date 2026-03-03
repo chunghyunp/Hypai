@@ -106,22 +106,13 @@ export default function TabA() {
                 >
                   {tr(T.ctaButton, lang)}
                 </a>
-                <div className="flex items-center justify-center gap-3 mt-6">
-                  <span className="text-gray-500 text-sm">{tr(translations.companyIntro.heading, lang)}:</span>
+                <div className="mt-6">
                   <a
                     href="/docs/HYPAI_CI_EN.pdf"
                     download
                     className="text-brand-400 hover:text-brand-300 text-sm font-medium underline underline-offset-2 transition-colors duration-200"
                   >
-                    EN
-                  </a>
-                  <span className="text-gray-700">|</span>
-                  <a
-                    href="/docs/HYPAI_CI_KR.pdf"
-                    download
-                    className="text-brand-400 hover:text-brand-300 text-sm font-medium underline underline-offset-2 transition-colors duration-200"
-                  >
-                    KR
+                    Download Company Introduction (PDF)
                   </a>
                 </div>
               </div>

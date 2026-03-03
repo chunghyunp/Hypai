@@ -6,9 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { navbarVariants } from '@/lib/motionVariants';
 import NavLink from './NavLink';
-import LangToggle from './LangToggle';
-import { useLanguage } from '@/context/LanguageContext';
-import { translations, tr } from '@/lib/translations';
 import type { NavTab } from '@/types/navigation';
 
 interface NavbarProps {
@@ -17,7 +14,6 @@ interface NavbarProps {
 
 export default function Navbar({ tabs }: NavbarProps) {
   const pathname = usePathname();
-  const { lang } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -59,7 +55,6 @@ export default function Navbar({ tabs }: NavbarProps) {
 
         {/* Right side */}
         <div className="flex items-center gap-2 shrink-0">
-          <LangToggle />
           <motion.a
             href="/contact"
             className="hidden lg:inline-block bg-brand-500 hover:bg-brand-400 text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors duration-200"
@@ -67,7 +62,7 @@ export default function Navbar({ tabs }: NavbarProps) {
             whileTap={{ scale: 0.96 }}
             transition={{ type: 'spring', stiffness: 400, damping: 20 }}
           >
-            {tr(translations.nav.cta, lang)}
+            Get in touch
           </motion.a>
 
           {/* Hamburger — mobile only */}
@@ -119,7 +114,7 @@ export default function Navbar({ tabs }: NavbarProps) {
                 onClick={() => setMobileOpen(false)}
                 className="mt-2 bg-brand-500 hover:bg-brand-400 text-white text-sm font-semibold px-4 py-3 rounded-xl text-center transition-colors duration-200"
               >
-                {tr(translations.nav.cta, lang)}
+                Get in touch
               </a>
             </div>
           </motion.div>
