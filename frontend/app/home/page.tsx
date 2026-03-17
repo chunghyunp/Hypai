@@ -23,11 +23,11 @@ function MarqueeRow({ names, direction }: { names: string[]; direction: 'left' |
   const cls = direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right';
   return (
     <div className="overflow-hidden py-2">
-      <div className={`flex gap-4 whitespace-nowrap ${cls}`} style={{ width: 'max-content' }}>
+      <div className={`flex gap-3 whitespace-nowrap ${cls}`} style={{ width: 'max-content' }}>
         {doubled.map((name, i) => (
           <span
             key={`${name}-${i}`}
-            className="bg-gray-800/70 border border-gray-700 text-gray-300 text-sm font-medium px-5 py-2 rounded-full"
+            className="bg-surface-100 border border-surface-300/60 text-gray-400 text-sm font-medium px-5 py-2.5 rounded-lg"
           >
             {name}
           </span>
@@ -52,10 +52,10 @@ export default function TabA() {
 
       <StatsBar />
 
-      <section className="max-w-7xl mx-auto px-6 py-12 md:py-24">
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-28">
         <ScrollReveal>
           <RevealItem>
-            <div className="text-center mb-10 md:mb-16">
+            <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 {tr(T.sectionHeading1, lang)}{' '}
                 <span className="text-brand-400">{tr(T.sectionHeading2, lang)}</span>
@@ -70,27 +70,21 @@ export default function TabA() {
       </section>
 
       {/* Partner Marquee */}
-      <section className="py-16 border-t border-gray-800/60">
+      <section className="py-16 border-t border-surface-300/40">
         <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
-          <p className="text-gray-500 text-sm uppercase tracking-widest font-medium">
+          <p className="text-gray-500 text-xs uppercase tracking-[0.2em] font-medium">
             {tr(T.partnerLabel, lang)}
           </p>
         </div>
-        <div className="space-y-4">
+        <div className="space-y-3">
           <MarqueeRow names={row1Names} direction="left" />
           <MarqueeRow names={row2Names} direction="right" />
         </div>
       </section>
 
       {/* Bottom CTA */}
-      <section
-        className="border-t border-brand-800/40"
-        style={{
-          backgroundImage: 'radial-gradient(circle, #1534d5 1px, transparent 1px)',
-          backgroundSize: '28px 28px',
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-6 py-16 md:py-28">
+      <section className="border-t border-surface-300/40 bg-surface-50/40">
+        <div className="max-w-7xl mx-auto px-6 py-20 md:py-32">
           <ScrollReveal>
             <RevealItem>
               <div className="text-center">
@@ -102,15 +96,18 @@ export default function TabA() {
                 </p>
                 <a
                   href="/contact"
-                  className="inline-block bg-brand-500 hover:bg-brand-400 text-white font-semibold px-8 py-3 md:px-10 md:py-4 rounded-full text-base md:text-lg transition-colors duration-200"
+                  className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-3.5 rounded-lg text-base transition-colors duration-200"
                 >
                   {tr(T.ctaButton, lang)}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
                 </a>
                 <div className="mt-6">
                   <a
                     href="/docs/HYPAI_CI_EN.pdf"
                     download
-                    className="text-brand-400 hover:text-brand-300 text-sm font-medium underline underline-offset-2 transition-colors duration-200"
+                    className="text-brand-400 hover:text-brand-300 text-sm font-medium underline underline-offset-4 transition-colors duration-200"
                   >
                     Download Company Introduction (PDF)
                   </a>

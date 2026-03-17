@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { navUnderlineVariants } from '@/lib/motionVariants';
 import type { NavTab } from '@/types/navigation';
 
 interface NavLinkProps {
@@ -12,18 +11,18 @@ interface NavLinkProps {
 
 export default function NavLink({ tab, isActive }: NavLinkProps) {
   return (
-    <Link href={tab.href} className="relative group px-1 py-2">
-      {/* Active sliding pill */}
+    <Link href={tab.href} className="relative group px-3 py-2">
+      {/* Active indicator */}
       {isActive && (
         <motion.span
           layoutId="nav-active-dot"
-          className="absolute inset-0 bg-brand-500/15 rounded-lg"
+          className="absolute inset-0 bg-brand-500/10 rounded-lg"
           transition={{ type: 'spring', stiffness: 380, damping: 30 }}
         />
       )}
 
       <span
-        className={`relative z-10 text-sm font-semibold transition-colors duration-200 ${
+        className={`relative z-10 text-sm font-medium transition-colors duration-200 ${
           isActive ? 'text-brand-400' : 'text-gray-400 group-hover:text-white'
         }`}
       >
@@ -31,12 +30,9 @@ export default function NavLink({ tab, isActive }: NavLinkProps) {
       </span>
 
       {/* Hover underline */}
-      <motion.span
-        variants={navUnderlineVariants}
-        initial="rest"
-        whileHover="hover"
-        className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-400 rounded-full origin-left"
-      />
+      {!isActive && (
+        <span className="absolute bottom-1 left-3 right-3 h-px bg-brand-400 rounded-full scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-200" />
+      )}
     </Link>
   );
 }

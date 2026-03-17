@@ -45,7 +45,7 @@ export const translations = {
   // ── Pillar Cards ─────────────────────────────────────────
   pillars: [
     {
-      icon: '🏗️',
+      icon: 'building',
       title: t('Project Development & Infrastructure', '프로젝트 개발 및 인프라'),
       body: t(
         'PPP-based large-scale projects including nuclear power, land reclamation, and special economic zones across Southeast Asia, Africa, and the Middle East.',
@@ -53,7 +53,7 @@ export const translations = {
       ),
     },
     {
-      icon: '🌏',
+      icon: 'globe',
       title: t('Manufacturing & Global Distribution', '제조 및 글로벌 유통'),
       body: t(
         'Integrated SCM across OEM manufacturing, trade, and global distribution — generating over USD 100M in annual exports across 8,000+ channels in Asia.',
@@ -61,7 +61,7 @@ export const translations = {
       ),
     },
     {
-      icon: '💻',
+      icon: 'monitor',
       title: t('Digital Technology', '디지털 기술'),
       body: t(
         'Fintech, Blockchain, and AI solutions including VASP-based payment systems (EZPG), AI biometric authentication (Facial DNA), and blockchain incubation (Web3Labs).',
@@ -69,7 +69,7 @@ export const translations = {
       ),
     },
     {
-      icon: '💼',
+      icon: 'briefcase',
       title: t('Investment Portfolio', '투자 포트폴리오'),
       body: t(
         'Over USD 10 trillion in investment secured across 50+ transactions spanning entertainment, real estate, healthcare, and manufacturing.',
@@ -77,7 +77,7 @@ export const translations = {
       ),
     },
     {
-      icon: '🌐',
+      icon: 'network',
       title: t('Global Presence', '글로벌 거점'),
       body: t(
         '14+ overseas branches in the US, UK, Turkey, China, Hong Kong, Singapore, the Philippines, and Japan.',
@@ -85,7 +85,7 @@ export const translations = {
       ),
     },
     {
-      icon: '🤝',
+      icon: 'handshake',
       title: t('Strategic Partners', '전략적 파트너'),
       body: t(
         'Long-term partnerships with world-class organizations including CCCC (ENR Top 5), CITIC Group (Fortune 500), and Sinosure.',
@@ -263,9 +263,9 @@ export const translations = {
       '파트너십, 투자 기회, 또는 프로젝트 협력에 관심이 있으신가요? Hypai Labs 팀에 연락해 주세요.',
     ),
     channels: [
-      { icon: '✉️', label: t('Email',       '이메일'), value: 'master@hypaikorea.com', href: 'mailto:master@hypaikorea.com' },
-      { icon: '📍', label: t('Head Office', '본사'),   value: '2F, 88-1 Nonhyeon-dong, Gangnam-gu, Seoul, Korea', href: '#' },
-      { icon: '🌐', label: t('Website',     '웹사이트'), value: 'hypaikorea.com', href: '#' },
+      { icon: 'mail', label: t('Email',       '이메일'), value: 'master@hypaikorea.com', href: 'mailto:master@hypaikorea.com' },
+      { icon: 'map-pin', label: t('Head Office', '본사'),   value: '2F, 88-1 Nonhyeon-dong, Gangnam-gu, Seoul, Korea', href: '#' },
+      { icon: 'link', label: t('Website',     '웹사이트'), value: 'hypaikorea.com', href: '#' },
     ],
     formTitle:       t('Send a message', '메시지 보내기'),
     labelName:       t('Name',    '이름'),

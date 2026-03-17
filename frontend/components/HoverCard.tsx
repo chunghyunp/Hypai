@@ -15,7 +15,7 @@ export default function HoverCard({ children, className = '' }: HoverCardProps) 
       initial="rest"
       whileHover="hover"
       animate="rest"
-      className={`bg-gray-900/60 border border-gray-800 rounded-2xl p-7 cursor-default ${className}`}
+      className={`bg-surface-100/60 border border-surface-300/60 rounded-2xl p-6 md:p-7 cursor-default ${className}`}
     >
       {children}
     </motion.div>

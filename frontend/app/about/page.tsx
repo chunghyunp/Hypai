@@ -5,6 +5,7 @@ import PageTransition from '@/components/PageTransition';
 import ParallaxSection from '@/components/ParallaxSection';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, tr } from '@/lib/translations';
+import { DownloadIcon } from '@/components/icons';
 
 const branches = ['US', 'UK', 'Turkey', 'China', 'Hong Kong', 'Singapore', 'Philippines', 'Japan'];
 
@@ -31,10 +32,10 @@ const partners: {
 
 function sectorColors(sector: Sector) {
   switch (sector) {
-    case 'infra':      return 'bg-violet-900/50 border-violet-700/40 text-violet-300';
-    case 'finance':    return 'bg-emerald-900/50 border-emerald-700/40 text-emerald-300';
-    case 'realestate': return 'bg-cyan-900/50 border-cyan-700/40 text-cyan-300';
-    case 'distrib':    return 'bg-orange-900/50 border-orange-700/40 text-orange-300';
+    case 'infra':      return 'bg-violet-500/10 border-violet-500/20 text-violet-300';
+    case 'finance':    return 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300';
+    case 'realestate': return 'bg-cyan-500/10 border-cyan-500/20 text-cyan-300';
+    case 'distrib':    return 'bg-amber-500/10 border-amber-500/20 text-amber-300';
   }
 }
 
@@ -45,22 +46,22 @@ export default function TabB() {
   return (
     <PageTransition>
       {/* Hero */}
-      <ParallaxSection className="min-h-[60vh] flex items-center bg-gradient-to-br from-gray-950 via-brand-950/60 to-gray-950">
+      <ParallaxSection className="min-h-[60vh] flex items-center bg-surface-0">
         <div className="max-w-7xl mx-auto px-6 py-16 md:py-28 w-full">
           <ScrollReveal>
             <RevealItem>
-              <span className="inline-block text-brand-400 font-semibold tracking-widest uppercase text-sm mb-4">
+              <span className="inline-block text-brand-400 font-semibold tracking-[0.15em] uppercase text-xs mb-4">
                 {tr(T.badge, lang)}
               </span>
             </RevealItem>
             <RevealItem>
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
                 {tr(T.heroLine1, lang)}<br />
                 <span className="text-brand-400">{tr(T.heroLine2, lang)}</span>
               </h1>
             </RevealItem>
             <RevealItem>
-              <p className="text-xl text-gray-400 max-w-2xl leading-relaxed">
+              <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">
                 {tr(T.heroPara, lang)}
               </p>
             </RevealItem>
@@ -69,7 +70,7 @@ export default function TabB() {
       </ParallaxSection>
 
       {/* Company Introduction Download */}
-      <section className="border-t border-gray-800 bg-gray-900/30">
+      <section className="border-t border-surface-300/40 bg-surface-50/60">
         <div className="max-w-7xl mx-auto px-6 py-10 md:py-14">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
@@ -84,11 +85,9 @@ export default function TabB() {
               <a
                 href="/docs/HYPAI_CI_EN.pdf"
                 download
-                className="flex items-center gap-2 bg-brand-500 hover:bg-brand-400 text-white text-sm font-semibold px-5 py-3 rounded-xl transition-colors duration-200"
+                className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors duration-200"
               >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M8 1v9M4.5 6.5 8 10l3.5-3.5M2 13h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <DownloadIcon size={16} />
                 Download (PDF)
               </a>
             </div>
@@ -97,19 +96,19 @@ export default function TabB() {
       </section>
 
       {/* Operational Pillars */}
-      <section className="max-w-7xl mx-auto px-6 py-14 md:py-28">
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-28">
         <ScrollReveal>
           <RevealItem>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 md:mb-16 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 md:mb-16 text-center">
               {tr(T.howWeOperate, lang)}
             </h2>
           </RevealItem>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
             {T.pillars.map((p) => (
               <RevealItem key={p.title.en}>
-                <div className="border border-gray-800 rounded-2xl p-5 md:p-8 hover:border-brand-700/60 transition-colors duration-300 bg-gray-900/40">
-                  <h3 className="text-2xl font-bold text-white mb-3">{tr(p.title, lang)}</h3>
-                  <p className="text-gray-400 leading-relaxed">{tr(p.body, lang)}</p>
+                <div className="border border-surface-300/60 rounded-2xl p-6 md:p-8 hover:border-brand-600/40 transition-colors duration-200 bg-surface-100/60">
+                  <h3 className="text-xl font-bold text-white mb-3">{tr(p.title, lang)}</h3>
+                  <p className="text-gray-400 leading-relaxed text-sm">{tr(p.body, lang)}</p>
                 </div>
               </RevealItem>
             ))}
@@ -118,18 +117,18 @@ export default function TabB() {
       </section>
 
       {/* Teams */}
-      <section className="bg-gray-900/50 border-t border-gray-800">
+      <section className="bg-surface-50/60 border-t border-surface-300/40">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <ScrollReveal>
             <RevealItem>
-              <p className="text-center text-gray-500 text-sm uppercase tracking-widest mb-6">
+              <p className="text-center text-gray-500 text-xs uppercase tracking-[0.2em] mb-6">
                 {tr(T.teamsLabel, lang)}
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 {T.departments.map((dept) => (
                   <span
                     key={dept.en}
-                    className="bg-gray-800 border border-gray-700 text-gray-300 text-sm font-medium px-4 py-2 rounded-full"
+                    className="bg-surface-200 border border-surface-300/60 text-gray-300 text-sm font-medium px-4 py-2 rounded-lg"
                   >
                     {tr(dept, lang)}
                   </span>
@@ -141,10 +140,10 @@ export default function TabB() {
       </section>
 
       {/* Global Branches */}
-      <section className="max-w-7xl mx-auto px-6 py-14 md:py-28">
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-28">
         <ScrollReveal>
           <RevealItem>
-            <div className="text-center mb-8 md:mb-12">
+            <div className="text-center mb-10 md:mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 {tr(T.branchesHeading, lang)}
               </h2>
@@ -152,11 +151,11 @@ export default function TabB() {
             </div>
           </RevealItem>
           <RevealItem>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3">
               {branches.map((country) => (
                 <div
                   key={country}
-                  className="bg-brand-900/30 border border-brand-800/50 text-brand-300 font-semibold px-6 py-3 rounded-full text-sm"
+                  className="bg-brand-500/10 border border-brand-500/20 text-brand-300 font-semibold px-5 py-2.5 rounded-lg text-sm"
                 >
                   {country}
                 </div>
@@ -167,12 +166,12 @@ export default function TabB() {
       </section>
 
       {/* Partner Companies */}
-      <section className="bg-gray-900/40 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-6 py-14 md:py-28">
+      <section className="bg-surface-50/40 border-t border-surface-300/40">
+        <div className="max-w-7xl mx-auto px-6 py-16 md:py-28">
           <ScrollReveal>
             <RevealItem>
-              <div className="text-center mb-10 md:mb-16">
-                <span className="inline-block text-brand-400 font-semibold tracking-widest uppercase text-sm mb-4">
+              <div className="text-center mb-12 md:mb-16">
+                <span className="inline-block text-brand-400 font-semibold tracking-[0.15em] uppercase text-xs mb-4">
                   {tr(T.partnerBadge, lang)}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{tr(T.partnerHeading, lang)}</h2>
@@ -185,14 +184,14 @@ export default function TabB() {
                 const areaLabel = tr(T.partnerAreas[p.area], lang);
                 return (
                   <RevealItem key={p.abbr}>
-                    <div className="border border-gray-800 rounded-2xl p-6 bg-gray-900/50 hover:border-gray-700 transition-colors duration-300 h-full">
+                    <div className="border border-surface-300/60 rounded-2xl p-6 bg-surface-100/60 hover:border-surface-400/60 transition-colors duration-200 h-full">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${badgeCls} font-bold text-sm`}>
+                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center border ${badgeCls} font-bold text-xs`}>
                           {p.abbr}
                         </div>
                       </div>
-                      <h3 className="text-white font-semibold text-base mb-3 leading-snug">{p.name}</h3>
-                      <span className={`inline-block text-xs font-medium px-3 py-1 rounded-full border ${badgeCls}`}>
+                      <h3 className="text-white font-semibold text-sm mb-3 leading-snug">{p.name}</h3>
+                      <span className={`inline-block text-xs font-medium px-3 py-1 rounded-md border ${badgeCls}`}>
                         {areaLabel}
                       </span>
                     </div>

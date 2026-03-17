@@ -7,8 +7,6 @@ import {
   heroHeadingVariants,
   heroSubVariants,
   heroCTAVariants,
-  orbVariants,
-  orbVariantsSlow,
 } from '@/lib/motionVariants';
 
 interface HeroSectionProps {
@@ -30,34 +28,25 @@ export default function HeroSection({
     offset: ['start start', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex items-center overflow-hidden bg-gray-950"
+      className="relative min-h-screen flex items-center overflow-hidden bg-surface-0"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_0%,theme(colors.brand.900/40)_0%,transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_10%_80%,theme(colors.violet.900/30)_0%,transparent_60%)]" />
+      {/* Subtle gradient backdrop */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-20%,theme(colors.brand.950/50)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_80%,theme(colors.brand.950/20)_0%,transparent_50%)]" />
 
-      {/* Floating orbs */}
-      <motion.div
-        variants={orbVariants}
-        animate="animate"
-        className="absolute top-20 right-[15%] w-72 h-72 rounded-full bg-brand-600/20 blur-3xl pointer-events-none"
-      />
-      <motion.div
-        variants={orbVariantsSlow}
-        animate="animate"
-        className="absolute bottom-32 left-[10%] w-96 h-96 rounded-full bg-violet-600/15 blur-3xl pointer-events-none"
-      />
-      <motion.div
-        variants={orbVariants}
-        animate="animate"
-        className="absolute top-1/2 left-1/2 w-64 h-64 rounded-full bg-cyan-600/10 blur-3xl pointer-events-none"
-        style={{ translateX: '-50%', translateY: '-50%' }}
+      {/* Grid pattern overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+        }}
       />
 
       {/* Content */}
@@ -71,7 +60,7 @@ export default function HeroSection({
           animate="animate"
           className="overflow-hidden"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white leading-none tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white leading-[1.05] tracking-tight mb-6">
             {headline.split(' ').map((word, i) => (
               <span
                 key={i}
@@ -87,7 +76,7 @@ export default function HeroSection({
           variants={heroSubVariants}
           initial="initial"
           animate="animate"
-          className="text-base md:text-xl lg:text-2xl text-gray-400 max-w-2xl leading-relaxed mb-8 md:mb-10"
+          className="text-base md:text-lg lg:text-xl text-gray-400 max-w-2xl leading-relaxed mb-10"
         >
           {subheadline}
         </motion.p>
@@ -100,13 +89,16 @@ export default function HeroSection({
         >
           <Link
             href={ctaHref}
-            className="inline-block bg-brand-500 hover:bg-brand-400 text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full text-base md:text-lg transition-colors duration-200"
+            className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold px-6 py-3 md:px-8 md:py-3.5 rounded-lg text-base transition-colors duration-200"
           >
-            {ctaLabel} →
+            {ctaLabel}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </Link>
           <Link
             href="/business"
-            className="inline-block border border-gray-700 hover:border-brand-500 text-gray-300 hover:text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full text-base md:text-lg transition-colors duration-200"
+            className="inline-block border border-surface-400 hover:border-brand-500 text-gray-300 hover:text-white font-semibold px-6 py-3 md:px-8 md:py-3.5 rounded-lg text-base transition-colors duration-200"
           >
             See our work
           </Link>
@@ -115,17 +107,17 @@ export default function HeroSection({
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-10 left-0 right-0 flex flex-col items-center gap-2 text-gray-600 text-xs"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute bottom-8 left-0 right-0 flex flex-col items-center gap-2 text-gray-600 text-xs"
+        animate={{ y: [0, 6, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <span className="uppercase tracking-widest">Scroll</span>
-        <svg width="12" height="20" viewBox="0 0 12 20" fill="none">
+        <span className="uppercase tracking-[0.2em] text-[10px]">Scroll</span>
+        <svg width="12" height="20" viewBox="0 0 12 20" fill="none" aria-hidden="true">
           <rect x="1" y="1" width="10" height="18" rx="5" stroke="currentColor" strokeWidth="1.5" />
           <motion.rect
             x="5" y="4" width="2" height="5" rx="1" fill="currentColor"
             animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
           />
         </svg>
       </motion.div>

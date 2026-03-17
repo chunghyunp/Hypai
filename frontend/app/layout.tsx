@@ -34,8 +34,8 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className="bg-surface-0">
+      <body className="min-h-screen">
         <LanguageProvider>
           <Navbar tabs={tabs} />
           <AnimatePresenceWrapper>

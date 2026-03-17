@@ -13,7 +13,7 @@ function sectorTagClass(tag: string) {
     case 'cyan':    return 'text-cyan-400';
     case 'emerald': return 'text-emerald-400';
     case 'rose':    return 'text-rose-400';
-    case 'orange':  return 'text-orange-400';
+    case 'orange':  return 'text-amber-400';
     default:        return 'text-brand-400';
   }
 }
@@ -28,18 +28,18 @@ export default function TabF() {
       <section className="max-w-7xl mx-auto px-6 pt-24 md:pt-32 pb-10 md:pb-16">
         <ScrollReveal>
           <RevealItem>
-            <span className="inline-block text-brand-400 font-semibold tracking-widest uppercase text-sm mb-4">
+            <span className="inline-block text-brand-400 font-semibold tracking-[0.15em] uppercase text-xs mb-4">
               {tr(T.badge, lang)}
             </span>
           </RevealItem>
           <RevealItem>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
               {tr(T.heading1, lang)}<br />
               <span className="text-brand-400">{tr(T.heading2, lang)}</span>
             </h1>
           </RevealItem>
           <RevealItem>
-            <p className="text-xl text-gray-400 max-w-2xl leading-relaxed">
+            <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">
               {tr(T.sub, lang)}
             </p>
           </RevealItem>
@@ -49,19 +49,19 @@ export default function TabF() {
       {/* Portfolio grid */}
       <section className="max-w-7xl mx-auto px-6 pb-16 md:pb-28">
         <ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-5">
             {T.portfolio.map((p) => (
               <RevealItem key={p.company}>
-                <HoverCard className={`bg-gradient-to-br ${p.color} border ${p.border} h-full`}>
+                <HoverCard className="border border-surface-300/60 h-full">
                   <div className="mb-3">
-                    <span className={`text-xs font-semibold tracking-wider uppercase ${sectorTagClass(p.tag)}`}>
+                    <span className={`text-xs font-semibold tracking-[0.1em] uppercase ${sectorTagClass(p.tag)}`}>
                       {tr(p.sector, lang)}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{p.company}</h3>
-                  <p className="text-gray-400 leading-relaxed mb-4">{tr(p.description, lang)}</p>
-                  <p className="text-gray-300 text-sm border-t border-gray-700/50 pt-4">
-                    → {tr(p.highlight, lang)}
+                  <h3 className="text-xl font-bold text-white mb-3">{p.company}</h3>
+                  <p className="text-gray-400 leading-relaxed text-sm mb-4">{tr(p.description, lang)}</p>
+                  <p className="text-gray-300 text-sm border-t border-surface-300/40 pt-4">
+                    <span className="text-brand-400 mr-1">→</span> {tr(p.highlight, lang)}
                   </p>
                 </HoverCard>
               </RevealItem>

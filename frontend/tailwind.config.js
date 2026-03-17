@@ -8,21 +8,36 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       colors: {
         brand: {
-          50:  '#f0f4ff',
-          100: '#dce6fe',
-          200: '#bad0fe',
-          300: '#8ab0fd',
-          400: '#5585fa',
-          500: '#3366f7',
-          600: '#1c45ec',
-          700: '#1534d5',
-          800: '#172bac',
-          900: '#192988',
-          950: '#131a54',
+          50:  '#eef4ff',
+          100: '#dae6ff',
+          200: '#bdd4ff',
+          300: '#90b8ff',
+          400: '#5b91ff',
+          500: '#3b6ff8',
+          600: '#2550ed',
+          700: '#1d3dda',
+          800: '#1e34b0',
+          900: '#1e308b',
+          950: '#161f54',
+        },
+        surface: {
+          0:   '#0a0e1a',
+          50:  '#0f1320',
+          100: '#151a2e',
+          200: '#1c2340',
+          300: '#252e4a',
+          400: '#363f5c',
+        },
+        accent: {
+          blue:    '#5b91ff',
+          violet:  '#8b7cf6',
+          emerald: '#34d399',
+          cyan:    '#22d3ee',
+          amber:   '#fbbf24',
         },
       },
       animation: {
